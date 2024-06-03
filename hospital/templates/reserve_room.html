@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservations</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      form {
+        margin-bottom: 5px; /* Add margin to the bottom of the form */
+      }
+      select {
+        margin-bottom: 10px; /* Add margin between dropdowns */
+      }
+
+      /* Style for home button */
+      .home-btn {
+        position: absolute;
+        top: 20px; /* Adjust top position */
+        right: 10px;
+        padding: 8px 12px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background-color 0.3s;
+        margin-right: 10px; /* Add right margin to separate buttons */
+      }
+
+      .home-btn:hover {
+        background-color: #d32f2f;
+      }
+
+      /* Style for logout button */
+      .logout-btn {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 8px 12px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+
+      .logout-btn:hover {
+        background-color: #d32f2f;
+      }
+
+      /* Style for create reservation button */
+      .create-reservation-btn {
+        margin-top: 5px;
+        background-color: #4c84af;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .create-reservation-btn:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Reservations</h1>
+      <a href="/" class="home-btn">Home</a>
+      <!-- Home button -->
+    </header>
+    <main>
+      <form action="/api/create-reservation" method="post">
+        <label for="room_id">Room:</label>
+        <select id="room_id" name="room_id" required>
+          {% for room in rooms %}
+          <option value="{{ room.id }}">{{ room.department }}</option>
+          {% endfor %}</select
+        ><br />
+
+        <label for="user_id">User:</label>
+        <select id="user_id" name="user_id" required>
+          {% for user in users %}
+          <option value="{{ user.id }}">{{ user.name }}</option>
+          {% endfor %}</select
+        ><br />
+
+        <button type="submit" class="create-reservation-btn">
+          Create Reservation
+        </button>
+        <!-- Add margin-top to the button -->
+      </form>
+    </main>
+    <footer>
+      <p>&copy; 2024 Hospital Management System</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservation Confirmation</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Style for home button */
+      .home-btn {
+        position: absolute;
+        top: 20px; /* Adjust top position */
+        right: 10px;
+        padding: 8px 12px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background-color 0.3s;
+        margin-right: 10px; /* Add right margin to separate buttons */
+      }
+
+      .home-btn:hover {
+        background-color: #d32f2f;
+      }
+
+      /* Style for logout button */
+      .logout-btn {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 8px 12px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+
+      .logout-btn:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Reservation Confirmation</h1>
+      <a href="/" class="home-btn">Home</a>
+      <!-- Home button -->
+    </header>
+    <main>
+      <div class="confirmation-message">
+        <p>Your reservation has been successfully confirmed.</p>
+        <p>Reservation Details:</p>
+        <ul>
+          <li><strong>Room:</strong> {{ room.department }}</li>
+          <li><strong>User:</strong> {{ user.name }}</li>
+        </ul>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2024 Hospital Management System</p>
+    </footer>
+  </body>
+</html>

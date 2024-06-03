@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/6c250567-9ec3-40b4-92ce-0046097c03ad/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/coe892-hms-project",
+    "appService.deploySubpath": "."
+}

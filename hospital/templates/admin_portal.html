@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Portal</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #4c84af;
+        color: white;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .btn:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Admin Portal</h1>
+      <a href="/all-users" class="btn">All Users</a>
+      <a href="/all-reservations" class="btn">All Reservations</a>
+      <a href="/reserve-room" class="btn">Room Reservation</a>
+      <a href="/all-rooms" class="btn">Rooms</a>
+    </div>
+    <footer>
+      <p>&copy; 2024 Hospital Management System</p>
+    </footer>
+  </body>
+</html>

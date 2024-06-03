@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Room Reservation</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .form-group label {
+        margin-bottom: 5px; /* Add a 5px margin below each label */
+      }
+      .form-group select {
+        margin-bottom: 10px; /* Add a 5px margin below each dropdown */
+      }
+
+      /* Style for home button */
+      .home-btn {
+        position: absolute;
+        top: 20px; /* Adjust top position */
+        right: 10px;
+        padding: 8px 12px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background-color 0.3s;
+        margin-right: 10px; /* Add right margin to separate buttons */
+      }
+
+      .home-btn:hover {
+        background-color: #d32f2f;
+      }
+
+      /* Style for logout button */
+      .logout-btn {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 8px 12px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+
+      .logout-btn:hover {
+        background-color: #d32f2f;
+      }
+
+      /* Style for reserve room button */
+      .reserve-btn {
+        margin-top: 5px;
+        background-color: #4c84af;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .reserve-btn:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Room Reservation</h1>
+      <a href="/" class="home-btn">Home</a>
+      <!-- Home button -->
+    </header>
+    <main>
+      <form action="/room/reservation" method="POST" class="reservation-form">
+        <div class="form-group">
+          <label for="user">User:</label>
+          <select id="user" name="user" required>
+            <option value="">Select User</option>
+            <!-- fetch users from backend and populate this dropdown -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="room">Room:</label>
+          <select id="room" name="room" required>
+            <option value="">Select Room</option>
+            <!-- fetch rooms from backend and populate this dropdown -->
+          </select>
+        </div>
+        <button type="submit" class="reserve-btn">Reserve Room</button>
+        <!-- Add margin-top to the button -->
+      </form>
+    </main>
+    <footer>
+      <p>&copy; 2024 Hospital Management System</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #dddddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      .add-user-btn {
+        margin-top: 20px;
+        background-color: #4c84af;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+
+      .add-user-btn:hover {
+        background-color: #d32f2f;
+      }
+
+      /* Style for home button */
+      .home-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 8px 12px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+
+      .home-btn:hover {
+        background-color: #d32f2f;
+      }
+
+      /* Style for logout button */
+      .logout-btn {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 8px 12px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+
+      .logout-btn:hover {
+        background-color: #d32f2f;
+      }
+
+      /* Add hover color for delete button */
+      form button[type="submit"] {
+        background-color: #f44336; /* Red color */
+        color: white; /* Text color */
+        border: none; /* Remove border */
+        border-radius: 4px; /* Add border-radius */
+        cursor: pointer;
+        padding: 8px 16px; /* Adjust padding */
+      }
+
+      /* Change hover color for delete button */
+      form button[type="submit"]:hover {
+        background-color: #d32f2f; /* Darker red on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>All Users</h1>
+      <a href="/" class="home-btn">Home</a>
+      <!-- Home button -->
+    </header>
+    <main>
+      <div class="container">
+        <table>
+          <thead>
+            <tr>
+              <th>User ID</th>
+              <th>Name</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in users %}
+            <tr>
+              <td>{{ user.id }}</td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <a href="/add-user" class="add-user-btn">Add New User</a>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2024 Hospital Management System</p>
+    </footer>
+  </body>
+</html>

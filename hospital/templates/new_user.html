@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New User</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+        width: 100%;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        text-align: left;
+      }
+
+      input[type="text"],
+      input[type="email"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4c84af;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #d32f2f;
+      }
+      /* Style for home button */
+      .home-btn {
+        position: absolute;
+        top: 20px; /* Adjust top position */
+        right: 20px;
+        padding: 8px 12px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+
+      .home-btn:hover {
+        background-color: #d32f2f;
+      }
+
+      /* Style for logout button */
+      .logout-btn {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 8px 12px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+
+      .logout-btn:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Add New User</h1>
+      <a href="/" class="home-btn">Home</a>
+      <!-- Home button -->
+    </header>
+    <main>
+      <div class="container">
+        <form action="/api/create-user" method="POST">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <button type="submit">Add User</button>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2024 Hospital Management System</p>
+    </footer>
+  </body>
+</html>
